@@ -32,23 +32,23 @@ const items = {
 
 function slap() {
   let mod = addMods() || 0
-  characters.SolBadguy.health -= 1 + mod;
+  characters.SolBadguy.health -= 1 + mod
   characters.SolBadguy.hits += 1
   update()
 }
 function punch() {
   
   let mod = addMods()
-  characters.SolBadguy.health -= 5 + mod; characters.SolBadguy.hits += 1
+  characters.SolBadguy.health -= 5 + mod
+  characters.SolBadguy.hits += 1
   update()
 }
 function kick() {
   let mod = addMods()
-  characters.SolBadguy.health -= 10 + mod;  characters.SolBadguy.hits += 1
+  characters.SolBadguy.health -= 10 + mod  characters.SolBadguy.hits += 1
   update()
 }
 function equip(itemName) {
-
   characters.SolBadguy.items.push(items[itemName])
 
 }
@@ -59,6 +59,14 @@ function update() {
   document.getElementById('name').innerText = `${characters.SolBadguy.name}`
   document.getElementById('hits').innerText = `${characters.SolBadguy.hits}`
   document.getElementById('character-image').innerHTML = `<img src="${characters.SolBadguy.img}" alt="">`
+
+  if(characters.SolBadguy.health <= 0){
+    printKO()
+  }
+}
+
+function printKO(){
+
 }
 
 function addMods(){
@@ -79,6 +87,4 @@ function draw(){
 }
 
 update()
-equip()
-addMods()
 draw()
