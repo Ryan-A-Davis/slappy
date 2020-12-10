@@ -41,17 +41,23 @@
   </main>
 
   <footer class="comntainer-fluid bg-primary" id="controls">
-    <div class="row justify-content-center">
-      <div class="col-1">
-        <button type="button" class="btn btn-outline-danger" onclick="slap()"> You DONE SLAPPED</button>
-      </div>
-      <div class="col-1">
-        <button type="button" class="btn btn-outline-warning" onclick="punch()"> You DONE PUNCHED</button>
+    <div class="row justify-content-between">
+      <div class="col-4 d-flex justify-content-around dropup py-2">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Equip
+        </button>
+        <div class="dropdown-menu" id= "items" aria-labelledby="dropdownMenuButton">
+
+        </div>
+
       </div>
 
-      <div class="col-1">
-        <button type="button" class="btn btn-outline-secondary" onclick="kick()"> You DONE KICKED</button>
+      <div class="col-6 d-flex justify-content-between py-2">
+        <button type="button" class="btn btn-outline-danger" onclick="slap()">SLAPPED</button>
+        <button type="button" class="btn btn-outline-warning" onclick="punch()">PUNCHED</button>
+        <button type="button" class="btn btn-outline-secondary" onclick="kick()">KICKED</button>
       </div>
+
     </div>
 
   </footer>

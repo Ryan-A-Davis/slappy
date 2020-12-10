@@ -11,7 +11,6 @@ const characters = {
     items: []
   }
 }
-console.log(characters.SolBadguy)
 
 const items = {
   fire: {
@@ -32,35 +31,54 @@ const items = {
 }
 
 function slap() {
-  characters.SolBadguy.health -= 1
+  let mod = addMods() || 0
+  characters.SolBadguy.health -= 1 + mod;
   characters.SolBadguy.hits += 1
-  draw()
+  update()
 }
 function punch() {
-  characters.SolBadguy.health -= 5
-  characters.SolBadguy.hits += 1
-  draw()
+  
+  let mod = addMods()
+  characters.SolBadguy.health -= 5 + mod; characters.SolBadguy.hits += 1
+  update()
 }
 function kick() {
-  characters.SolBadguy.health -= 10
-  characters.SolBadguy.hits += 1
-  draw()
+  let mod = addMods()
+  characters.SolBadguy.health -= 10 + mod;  characters.SolBadguy.hits += 1
+  update()
 }
-function giveFire() {
-  characters.SolBadguy.items.push(items.fire)
+function equip(itemName) {
+
+  characters.SolBadguy.items.push(items[itemName])
+
 }
 
 
-function draw() {
+function update() {
   document.getElementById('health').innerText = `${characters.SolBadguy.health}`
   document.getElementById('name').innerText = `${characters.SolBadguy.name}`
   document.getElementById('hits').innerText = `${characters.SolBadguy.hits}`
   document.getElementById('character-image').innerHTML = `<img src="${characters.SolBadguy.img}" alt="">`
-
 }
 
+function addMods(){
+  let modTotal = 0;
+  characters.SolBadguy.items.forEach(item => (modTotal += item.modifier)
+  );
+   return modTotal
+}
 
+function draw(){
+  let itemsArray = Object.keys(items)
+  let equipped = ""
+
+  itemsArray.forEach(i => equipped += `<a class="dropdown-item" onclick="equip('${i}')">${i.toUpperCase()}</a>`)
+  console.log(equipped)
+  console.log(itemsArray)
+  document.getElementById("items").innerHTML = equipped
+}
+
+update()
+equip()
+addMods()
 draw()
-giveFire()
-
-console.log(characters.SolBadguy)
