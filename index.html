@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Title</title>
+  <title>Slap HANDS</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -14,6 +14,47 @@
 </head>
 
 <body>
+  <header class="container-fluid bg-primary" id="stat-bar">
+    <div class="row">
+      <div class="col-2">
+        <p>Health:<span id="health"></span></p>
+        <p>Name: <span id="name"></span></p>
+      </div>
+      <div class="col">
+        <span>Hits:<span id="hits"></span></span>
+      </div>
+    </div>
+  </header>
+  <main class="container-fluid">
+    <div class="row" id="battlefield">
+      <div class="col">
+
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-2 d-flex" id="character-image">
+
+      </div>
+    </div>
+
+
+  </main>
+
+  <footer class="comntainer-fluid bg-primary" id="controls">
+    <div class="row justify-content-center">
+      <div class="col-1">
+        <button type="button" class="btn btn-outline-danger" onclick="slap()"> You DONE SLAPPED</button>
+      </div>
+      <div class="col-1">
+        <button type="button" class="btn btn-outline-warning" onclick="punch()"> You DONE PUNCHED</button>
+      </div>
+
+      <div class="col-1">
+        <button type="button" class="btn btn-outline-secondary" onclick="kick()"> You DONE KICKED</button>
+      </div>
+    </div>
+
+  </footer>
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
