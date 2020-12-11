@@ -9,13 +9,26 @@ main{
 }
 
 header{
-  min-height: 10vh;
+  max-height: 10vh;
 }
 
 footer{
-  min-height: 8vh;
+  max-height: 10vh;
 }
 
-img{
-  max-width: 200px;
+#KOimg{
+position: absolute;
+offset: 5vh, 5vh;
+opacity: 75%;
+width: 50vw;
+}
+#character-image{
+  max-height: 75%;
+  max-width: 75%;
+}
+#battlefield{
+  position: relative;
+}
+a:hover{
+cursor: pointer
 }

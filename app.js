@@ -7,7 +7,7 @@ const characters = {
     name: 'SolBadguy',
     health: 200,
     hits: 0,
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLUchTFN9oAWOD6j1UANfReU4o5oAHkrlIfQ&usqp=CAU",
+    img: "https://epic7x.com/wp-content/uploads/2019/04/sol.png",
     items: []
   }
 }
@@ -45,7 +45,8 @@ function punch() {
 }
 function kick() {
   let mod = addMods()
-  characters.SolBadguy.health -= 10 + mod  characters.SolBadguy.hits += 1
+  characters.SolBadguy.health -= 10 + mod
+  characters.SolBadguy.hits += 1
   update()
 }
 function equip(itemName) {
@@ -58,7 +59,6 @@ function update() {
   document.getElementById('health').innerText = `${characters.SolBadguy.health}`
   document.getElementById('name').innerText = `${characters.SolBadguy.name}`
   document.getElementById('hits').innerText = `${characters.SolBadguy.hits}`
-  document.getElementById('character-image').innerHTML = `<img src="${characters.SolBadguy.img}" alt="">`
 
   if(characters.SolBadguy.health <= 0){
     printKO()
@@ -66,7 +66,7 @@ function update() {
 }
 
 function printKO(){
-
+  document.getElementById("KOimg").classList.remove("d-none")
 }
 
 function addMods(){
@@ -84,6 +84,8 @@ function draw(){
   console.log(equipped)
   console.log(itemsArray)
   document.getElementById("items").innerHTML = equipped
+
+  document.getElementById('character').innerHTML = `<img src="${characters.SolBadguy.img}" id="character-image" alt="">`
 }
 
 update()
